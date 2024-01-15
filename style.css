@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
+
+:root{
+
+--Bright-Red: hsl(12, 88%, 59%);
+--Dark-Blue: hsl(228, 39%, 23%);
+
+
+--Dark-Grayish-Blue: hsl(227, 12%, 61%);
+--Very-Dark-Blue: hsl(233, 12%, 13%);
+--Very-Pale-Red: hsl(13, 90%, 70%);
+--Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Be Vietnam Pro', sans-serif; 
+}
+
+.hero{
+    background-image: url(bg-tablet-pattern.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 800px -150px;
+
+    padding: 4rem 0;
+}
+
+.wrapper{
+    max-width: 75em;
+    margin: 0 auto;
+    height: 500px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul{
+    display: flex;
+    align-items: center;
+    gap: 1.875em;
+}
+
+header li{
+    list-style-type: none;
+}
+
+header a{
+    text-decoration: none;
+    color: var(--Dark-Blue);
+    font-size: .85em;
+}
+
+header a:hover{
+    color: var(--Dark-Grayish-Blue);
+}
+
+/* this button style should apply to every button unless i need to modify the button otherwise */
+button{
+    color: white;
+    background-color: var(--Bright-Red);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50em;
+    font-size: .85em;
+    font-weight: 600;
+
+    box-shadow: 0 6px 20px 0 rgba(214, 76, 76, 0.5);
+}
+
+button:hover{
+    background-color: var(--Very-Pale-Red);
+    cursor: pointer;
+}
+
+header .hamburger-menu{
+    display: none;
+}
+
+@media (max-width: 500px){
+    body{
+        background-color: red;
+    }
+}
