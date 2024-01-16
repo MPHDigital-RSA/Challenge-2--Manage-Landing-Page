@@ -1,3 +1,6 @@
+
+/* UTILIES *********************/
+
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
 
 :root{
@@ -8,7 +11,7 @@
 
 --Dark-Grayish-Blue: hsl(227, 12%, 61%);
 --Very-Dark-Blue: hsl(233, 12%, 13%);
---Very-Pale-Red: hsl(13, 90%, 70%);
+--Very-Pale-Red: hsl(14, 93%, 73%);
 --Very-Light-Gray: hsl(0, 0%, 98%);
 }
 
@@ -20,9 +23,34 @@
     margin: 0;
 }
 
+.wrapper{
+    max-width: 65em;
+    margin: 0 auto;
+    padding: 0 2rem;
+    /* height: 500px; */
+}
+.grid-cont{
+    display: grid;
+}
+
+.grid-gap-100{
+    gap: 5rem;
+}
+
+.grid-gap-200{
+    gap: 1.5rem;
+}
+.two-grid-cols{
+    grid-template-columns: repeat(2, 1fr);
+}
+/* BODY STYLING **************************/
 body{
     font-family: 'Be Vietnam Pro', sans-serif; 
 }
+
+
+/* HERO SECTION STYLES ********************/
+
 
 .hero{
     background-image: url(bg-tablet-pattern.svg);
@@ -31,12 +59,6 @@ body{
     background-position: 800px -150px;
 
     padding: 4rem 0;
-}
-
-.wrapper{
-    max-width: 75em;
-    margin: 0 auto;
-    height: 500px;
 }
 
 header{
@@ -87,8 +109,88 @@ header .hamburger-menu{
     display: none;
 }
 
-@media (max-width: 500px){
-    body{
-        background-color: red;
+.col1 h1{
+    font-size: 3rem;
+    color: var(--Dark-Blue);
+}
+
+.col1 p{
+    color: var(--Dark-Grayish-Blue);
+}
+.col2{
+    text-align: right;
+}
+.col2 img{
+    width: 90%;
+}
+
+/* CONTENT STYLING */
+
+.content{
+    padding: 80px 0;
+    background-image: url(bg-tablet-pattern.svg);
+    background-repeat: no-repeat;
+    background-position: -400px 250px;
+}
+.content h1{
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.content .item{
+    text-align: left;
+}
+
+.content .item-header{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    /* 
+    this is the line that will be activated on mobile view
+
+    background-color: var(--Very-Pale-Red);
+    border-radius: 50px 0 0 50px;
+    */
+}
+
+.content .title{
+    color: var(--Dark-Blue);
+    font-weight: 600;
+    /* padding: 10px 0; */
+}
+
+.content .paragraph{
+    color: var(--Dark-Grayish-Blue);
+    padding: 15px 0 0 75px;
+    font-size: 14px;
+}
+
+/* MEDIA QUERRIES */
+@media (max-width: 50em){
+
+    header nav{
+        display: none;
     }
+    .col1 h1{
+        font-size: 2.2rem;
+    }
+
+    .two-grid-cols{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .col1{
+        text-align: center;
+    }
+
+    .content .paragraph{
+        padding: 15px 0 0;
+    }
+
+    .content .item-header{   
+        background-color: rgb(255, 229, 229);
+        border-radius: 50px;
+    }
+    
 }
