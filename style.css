@@ -1,58 +1,60 @@
-
 /* UTILIES *********************/
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&family=Be+Vietnam+Pro:wght@400;500;700&display=swap');
 
-:root{
+:root {
 
---Bright-Red: hsl(12, 88%, 59%);
---Dark-Blue: hsl(228, 39%, 23%);
+    --Bright-Red: hsl(12, 88%, 59%);
+    --Dark-Blue: hsl(228, 39%, 23%);
 
 
---Dark-Grayish-Blue: hsl(227, 12%, 61%);
---Very-Dark-Blue: hsl(233, 12%, 13%);
---Very-Pale-Red: hsl(14, 93%, 73%);
---Very-Light-Gray: hsl(0, 0%, 98%);
+    --Dark-Grayish-Blue: hsl(227, 12%, 61%);
+    --Very-Dark-Blue: hsl(233, 12%, 13%);
+    --Very-Pale-Red: hsl(14, 93%, 73%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
 }
 
 *,
 *::after,
-*::before{
+*::before {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-.wrapper{
+.wrapper {
     max-width: 65em;
     margin: 0 auto;
     padding: 0 2rem;
     /* height: 500px; */
 }
-.grid-cont{
+
+.grid-cont {
     display: grid;
 }
 
-.grid-gap-100{
+.grid-gap-100 {
     gap: 5rem;
 }
 
-.grid-gap-200{
+.grid-gap-200 {
     gap: 1.5rem;
 }
-.two-grid-cols{
+
+.two-grid-cols {
     grid-template-columns: repeat(2, 1fr);
 }
+
 /* BODY STYLING **************************/
-body{
-    font-family: 'Be Vietnam Pro', sans-serif; 
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 
 /* HERO SECTION STYLES ********************/
 
 
-.hero{
+.hero {
     background-image: url(bg-tablet-pattern.svg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -61,34 +63,34 @@ body{
     padding: 4rem 0;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header ul{
+header ul {
     display: flex;
     align-items: center;
     gap: 1.875em;
 }
 
-header li{
+header li {
     list-style-type: none;
 }
 
-header a{
+header a {
     text-decoration: none;
     color: var(--Dark-Blue);
     font-size: .85em;
 }
 
-header a:hover{
+header a:hover {
     color: var(--Dark-Grayish-Blue);
 }
 
 /* this button style should apply to every button unless i need to modify the button otherwise */
-button{
+button {
     color: white;
     background-color: var(--Bright-Red);
     border: none;
@@ -100,48 +102,51 @@ button{
     box-shadow: 0 6px 20px 0 rgba(214, 76, 76, 0.5);
 }
 
-button:hover{
+button:hover {
     background-color: var(--Very-Pale-Red);
     cursor: pointer;
 }
 
-header .hamburger-menu{
+header .hamburger-menu {
     display: none;
 }
 
-.col1 h1{
+.col1 h1 {
     font-size: 3rem;
     color: var(--Dark-Blue);
 }
 
-.col1 p{
+.col1 p {
     color: var(--Dark-Grayish-Blue);
 }
-.col2{
+
+.col2 {
     text-align: right;
 }
-.col2 img{
+
+.col2 img {
     width: 90%;
 }
 
 /* CONTENT STYLING */
 
-.content{
+.content {
     padding: 80px 0;
     background-image: url(bg-tablet-pattern.svg);
     background-repeat: no-repeat;
     background-position: -400px 250px;
 }
-.content h1{
+
+.content h1 {
     font-size: 2em;
     margin-bottom: 20px;
 }
 
-.content .item{
+.content .item {
     text-align: left;
 }
 
-.content .item-header{
+.content .item-header {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -154,43 +159,216 @@ header .hamburger-menu{
     */
 }
 
-.content .title{
+.content .title {
     color: var(--Dark-Blue);
     font-weight: 600;
     /* padding: 10px 0; */
 }
 
-.content .paragraph{
+.content .paragraph {
     color: var(--Dark-Grayish-Blue);
     padding: 15px 0 0 75px;
     font-size: 14px;
 }
 
-/* MEDIA QUERRIES */
-@media (max-width: 50em){
+/* testimonial slider section */
 
-    header nav{
+.testimonials {
+    padding-top: 100px;
+    text-align: center;
+}
+
+.testimonials h1 {
+    color: var(--Dark-Blue);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.testimonials .slider-container {
+    overflow: hidden;
+    margin: 0 auto;
+
+    padding-block: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.slider-container .slider-item {
+    height: 100%;
+    background-color: var(--Very-Light-Gray);
+    text-align: center;
+    padding: 0 50px 50px 50px;
+}
+
+.slider-item img {
+    --width: 60px;
+    width: var(--width);
+    margin-top: calc(var(--width)*(-0.5));
+    margin-bottom: 10px;
+}
+
+.slider-item p {
+    color: var(--Dark-Grayish-Blue);
+    margin-top: 10px;
+}
+
+/* footer styling */
+
+.top-section {
+    background-color: var(--Bright-Red);
+    background-image: url(bg-simplify-section-desktop.svg);
+    padding: 50px 0;
+}
+
+.top-section .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer h1 {
+    color: white;
+    font-weight: 400;
+}
+
+footer .top-section button {
+    background-color: white;
+    color: var(--Bright-Red);
+}
+
+.bottom-section {
+    background-color: var(--Very-Dark-Blue);
+    padding-block: 100px;
+}
+
+.bottom-section .wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+footer .logo-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer .logo-section .socials {
+    display: flex;
+    gap: 10px;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+footer a {
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+footer form input {
+    padding: 10px 15px;
+    border-radius: 50rem;
+    border: none;
+}
+
+footer form {
+    display: flex;
+    gap: 10px;
+}
+
+footer .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer .copyright {
+    font-size: 12px;
+    color: var(--Dark-Grayish-Blue);
+}
+
+/* MEDIA QUERRIES */
+@media (max-width: 50em) {
+
+    header nav {
         display: none;
     }
-    .col1 h1{
+
+    .col1 h1 {
         font-size: 2.2rem;
     }
 
-    .two-grid-cols{
+    .two-grid-cols {
         grid-template-columns: repeat(1, 1fr);
+        /* gap: 0; */
     }
 
-    .col1{
+    .col1 {
         text-align: center;
     }
 
-    .content .paragraph{
+    .content .paragraph {
         padding: 15px 0 0;
     }
 
-    .content .item-header{   
+    .content .item-header {
         background-color: rgb(255, 229, 229);
         border-radius: 50px;
     }
-    
+
+
+    .testimonials .slider-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .slider-container .slider-item {
+        max-width: 400px;
+    }
+
+    .top-section .wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    footer h1 {
+        text-align: center;
+    }
+
+    .bottom-section .wrapper {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+
+    footer .form {
+        gap: 30px;
+    }
+
+    footer form {
+        justify-content: center;
+    }
+
+    footer .socials {
+        justify-content: center;
+    }
+
+    footer #logo {
+        max-width: 200px;
+        margin: auto;
+    }
+
+    footer .logo-section {
+        gap: 30px;
+    }
 }
